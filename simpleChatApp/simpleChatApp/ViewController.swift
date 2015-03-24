@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
-    @IBOutlet weak var dockViewHeightContraint: NSLayoutConstraint!
+    @IBOutlet weak var dockViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var sendButton: UIButton!
     @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var messageTableView: UITableView!
@@ -23,6 +23,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         self.messageTableView.delegate = self
         self.messageTableView.dataSource = self
+        
+        // set self as delegate for text field
+        self.messageTextField.delegate = self
         
         // Add some sample data so that we can see something
         self.messagesArray.append("Test1")
@@ -41,14 +44,37 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         //send button is tapped
         
-        //perform an animation to grow the dock view
         
-        UIView.animateWithDuration(0.5, animations: {}, completion: nil)
+        
+    }
+    
+    // MARK: TextField Delegate Methods
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        
+        //perform an animation to grow the dock view
+
+        self.view.layoutIfNeeded()
+        UIView.animateWithDuration(0.5, animations: {
+            
+            self.dockViewHeightConstraint.constant = 400
+            self.view.layoutIfNeeded()
+            
+            }, completion: nil)
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        self.view.layoutIfNeeded()
+        UIView.animateWithDuration(0.5, animations: {
+            
+            self.dockViewHeightConstraint.constant = 60
+            self.view.layoutIfNeeded()
+            
+            }, completion: nil)
     }
     
     
-    
-    
+    // MARK: TableView Delegate Methods
     
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
