@@ -10,6 +10,9 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var dockViewHeightContraint: NSLayoutConstraint!
+    @IBOutlet weak var sendButton: UIButton!
+    @IBOutlet weak var messageTextField: UITextField!
     @IBOutlet weak var messageTableView: UITableView!
     
     var messagesArray:[String] = [String]()
@@ -32,6 +35,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    @IBAction func sendButtonTap(sender: UIButton) {
+        
+        //send button is tapped
+        
+        //perform an animation to grow the dock view
+        
+        UIView.animateWithDuration(0.5, animations: {}, completion: nil)
+    }
+    
+    
+    
+    
+    
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
