@@ -32,19 +32,16 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SPd-Rj-XBD" userLabel="Dock View">
                                 <rect key="frame" x="16" y="540" width="568" height="60"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iI1-nA-KKr">
-                                        <rect key="frame" x="20" y="15" width="469" height="30"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iI1-nA-KKr">
+                                        <rect key="frame" x="20" y="15" width="479" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWK-vN-bHP">
-                                        <rect key="frame" x="504" y="15" width="46" height="30"/>
+                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWK-vN-bHP">
+                                        <rect key="frame" x="514" y="15" width="36" height="30"/>
                                         <state key="normal" title="Send">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
-                                        <connections>
-                                            <action selector="sendButtonTap:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="gAs-hY-z1r"/>
-                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,6 +51,7 @@
                                     <constraint firstItem="iI1-nA-KKr" firstAttribute="top" secondItem="SPd-Rj-XBD" secondAttribute="top" constant="15" id="7HB-Hf-Wxs"/>
                                     <constraint firstAttribute="trailing" secondItem="JWK-vN-bHP" secondAttribute="trailing" constant="18" id="8Wj-rk-X6F"/>
                                     <constraint firstItem="JWK-vN-bHP" firstAttribute="leading" secondItem="iI1-nA-KKr" secondAttribute="trailing" constant="15" id="Do5-Bg-71n"/>
+                                    <constraint firstAttribute="bottom" secondItem="JWK-vN-bHP" secondAttribute="bottom" constant="15" id="YK2-S3-ufy"/>
                                     <constraint firstItem="JWK-vN-bHP" firstAttribute="top" secondItem="SPd-Rj-XBD" secondAttribute="top" constant="15" id="oSB-pm-1kD"/>
                                 </constraints>
                             </view>
@@ -70,10 +68,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="dockViewHeightContraint" destination="3md-9Y-RbB" id="4WQ-K6-3C9"/>
                         <outlet property="messageTableView" destination="YYh-3m-O0B" id="NXa-Rs-miB"/>
                         <outlet property="messageTextField" destination="iI1-nA-KKr" id="80N-N8-CPO"/>
-                        <outlet property="sendButton" destination="JWK-vN-bHP" id="fPN-oU-qWO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
